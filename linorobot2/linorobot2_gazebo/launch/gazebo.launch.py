@@ -77,17 +77,6 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(joy_launch_path),
         ),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(PathJoinSubstitution(
-                [FindPackageShare('realsense2_camera'), 'launch', 'demo_pointcloud_launch.py']
-            )),
-            launch_arguments={
-                'filters': 'pointcloud',
-                'ordered_pc': 'true', 
-                'pointcloud_texture_stream' : 'RS2_STREAM_ANY', 
-                'initial_reset': 'true'
-            }.items()   
-        ),
     ])
 
 #sources: 
